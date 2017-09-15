@@ -17,19 +17,17 @@ add_executable(
 	main.cpp
 )
 
-# Find Threads
+### Threads
 find_package( Threads REQUIRED )
 target_link_libraries(
 	March ${CMAKE_THREAD_LIBS_INIT}
 )
 
-# Find GLM
-find_package( glm REQUIRED )
+### GLM
 target_include_directories(
 	March PRIVATE
-	${GLM_INCLUDE_DIRS}
+	dependencies/glm
 )
-link_directories( ${GLM_LIBRARY_DIRS} )
 
 ### Optimizations
 if( MSVC )
