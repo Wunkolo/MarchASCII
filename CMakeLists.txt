@@ -10,11 +10,14 @@ set( CMAKE_CXX_EXTENSIONS OFF )
 set( CMAKE_COLOR_MAKEFILE ON )
 set( CMAKE_VERBOSE_MAKEFILE ON )
 
+### Target
+file( GLOB_RECURSE SOURCE_FILES source/*.cpp )
 add_executable(
 	March
-	Operations.cpp
-	Shapes.cpp
-	main.cpp
+	${SOURCE_FILES}
+)
+include_directories(
+	include
 )
 
 ### Threads
