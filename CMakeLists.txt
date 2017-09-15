@@ -1,5 +1,5 @@
 cmake_minimum_required( VERSION 3.2.2 )
-project( March )
+project( MarchASCII )
 
 ### Standard
 set( CMAKE_CXX_STANDARD 11 )
@@ -11,7 +11,7 @@ set( CMAKE_COLOR_MAKEFILE ON )
 set( CMAKE_VERBOSE_MAKEFILE ON )
 
 add_executable(
-	March 
+	March
 	Operations.cpp
 	Shapes.cpp
 	main.cpp
