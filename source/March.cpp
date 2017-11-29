@@ -16,11 +16,11 @@
 #include "Operations.hpp"
 #include "Shapes.hpp"
 
-#define PREC 0.3f
+#define PREC 0.003f
 
 glm::vec3 CalcNormal(const glm::vec3& Point)
 {
-	const glm::vec2 Epsilon = glm::vec2(1.0, -1.0) * 0.5773f * 0.0005f;
+	const glm::vec2 Epsilon = glm::vec2(1.0, -1.0) * (PREC * 3.0f);
 	return glm::normalize(glm::vec3(
 		glm::xyy(Epsilon) * Scene(Point + glm::xyy(Epsilon)).w +
 		glm::yyx(Epsilon) * Scene(Point + glm::yyx(Epsilon)).w +
@@ -39,7 +39,7 @@ glm::vec4 March(const glm::vec3& Origin, const glm::vec3& Ray, bool* Hit)
 
 	for( std::size_t i = 0; i < 128; i++ )
 	{
-		const std::float_t Precision = PREC * 0.001f * t.w;
+		const std::float_t Precision = PREC * t.w;
 		const glm::vec4 Query = Scene(Origin + Ray * t.w);
 		if( Query.w < Precision )
 		{

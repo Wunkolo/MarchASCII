@@ -1,6 +1,7 @@
 #pragma once
 
 #include <glm/fwd.hpp>
+#include <cmath>
 
 extern glm::vec4 Scene(const glm::vec3& Point);
 
